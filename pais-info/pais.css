@@ -1,0 +1,154 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #222;
+  --card: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #eee;
+  --card: #2c2c2c;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  padding: 30px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+#toggle-tema {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#toggle-tema img {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0.8);
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+  transition: border-color 0.3s;
+  outline: none;
+  background-color: var(--card);
+  color: var(--text);
+}
+
+.filtros input:focus,
+.filtros select:focus {
+  border-color: #003366; /* azul escuro no modo claro */
+}
+
+/* Modo escuro - borda vermelha clara ao focar */
+body.dark .filtros input:focus,
+body.dark .filtros select:focus {
+  border-color: #ff6b6b; /* vermelho claro */
+}
+
+.grid-paises {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.pais-card {
+  background-color: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px var(--shadow);
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.pais-card:hover {
+  transform: scale(1.02);
+}
+
+.pais-card img {
+  width: 100px;
+  border-radius: 6px;
+  margin: 12px 0;
+}
+
+/* Layout padrão (desktop) já definido */
+
+/* Tablet (largura até 900px) */
+@media (max-width: 768px) {
+  .filtros {
+    flex-direction: column;
+  }
+
+  .filtros input,
+  .filtros select {
+    min-width: 100%;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Celular (largura até 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .pais-card {
+    padding: 15px;
+  }
+
+  .pais-card img {
+    width: 80px;
+    margin: 10px 0;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  #toggle-tema {
+    align-self: flex-end;
+  }
+}

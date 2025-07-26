@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌍 Explorador de Países</title>
+    <link rel="stylesheet" href="pais.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌍 Explorador de Países</h1>
+        <button id="toggle-tema" aria-label="Alternar tema">
+          <img src="../svg/moon.svg" alt="Tema escuro" id="icone-tema" />
+        </button>
+      </header>
+
+      <div class="filtros">
+        <input
+          type="text"
+          id="busca"
+          placeholder="Digite o nome de um país..."
+        />
+        <select id="continente">
+          <option value="">🌎 Todos os continentes</option>
+          <option value="Africa">🌍 África</option>
+          <option value="Americas">🌎 Américas</option>
+          <option value="Asia">🌏 Ásia</option>
+          <option value="Europe">🌍 Europa</option>
+          <option value="Oceania">🌊 Oceania</option>
+        </select>
+      </div>
+
+      <div id="resultado" class="grid-paises"></div>
+    </div>
+
+    <script src="pais.js" defer></script>
+  </body>
+</html>
